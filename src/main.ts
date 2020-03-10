@@ -1,9 +1,7 @@
-import Vue from "vue";
-import App from "./App.vue";
-import "./registerServiceWorker";
+import Vue from 'vue';
+import Button from '@/components/Button.vue';
+import VueCompositionApi from '@vue/composition-api';
 
-Vue.config.productionTip = false;
+Vue.use(VueCompositionApi);
 
-new Vue({
-  render: h => h(App)
-}).$mount("#app");
+Vue.component('vx-button', Button);
