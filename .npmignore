@@ -1,0 +1,6 @@
+**
+
+!dist/**
+!types/**
+!src/components/**/*.vue
+!src/styles/**
