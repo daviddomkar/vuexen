@@ -1,0 +1,17 @@
+@mixin justify($pos)
+  .justify-#{$pos}
+    @if $pos === 'start'
+      justify-content: flex-start
+    @else if $pos == 'end'
+      justify-content: flex-end
+    @else 
+      justify-content: $pos
+
+@mixin align($pos)
+  .align-#{$pos}
+    @if $pos === 'start'
+      align-items: flex-start
+    @else if $pos == 'end'
+      align-items: flex-end
+    @else 
+      align-items: $pos

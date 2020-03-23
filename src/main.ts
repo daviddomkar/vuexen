@@ -1,7 +1,11 @@
-import Vue from 'vue';
-import Button from '@/components/Button.vue';
+import VxContainer from './components/VxContainer.vue';
+import VxColumn from './components/VxColumn.vue';
 import VueCompositionApi from '@vue/composition-api';
 
-Vue.use(VueCompositionApi);
-
-Vue.component('vx-button', Button);
+export default {
+  install(vue: any) {
+    vue.use(VueCompositionApi);
+    vue.component('vx-container', VxContainer);
+    vue.component('vx-column', VxColumn);
+  },
+};
