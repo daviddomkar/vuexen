@@ -1,6 +1,6 @@
 <p align="center">
-  <img src="./public/vuexen_dragon_white.svg">
+  <img style="max-width: 100%" src="./public/vuexen_dragon_white.svg">
 </p>
 <p align="center">
-  <img src="./public/vuexen.svg">
+  <img style="max-width: 100%" src="./public/vuexen.svg">
 </p>
