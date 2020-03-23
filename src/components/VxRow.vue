@@ -1,5 +1,5 @@
 <template>
-  <vx-container col :justify="justify" :align="align">
+  <vx-container row :justify="justify" :align="align">
     <slot />
   </vx-container>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <vx-container col :justify="justify" :align="align">
+  <vx-container row justify="center" align="center">
     <slot />
   </vx-container>
 </template>
@@ -10,10 +10,6 @@ import { defineComponent } from '@vue/composition-api';
 import VxContainer from './VxContainer.vue';
 
 export default defineComponent({
-  props: {
-    justify: String,
-    align: String,
-  },
   components: {
     VxContainer,
   },

@@ -4,8 +4,8 @@
     :class="[
       row ? 'vx-row' : '',
       col ? 'vx-col' : '',
-      justify ? 'justify-' + justify : '',
-      align ? 'align-' + align : '',
+      justify ? 'vx-justify-' + justify : '',
+      align ? 'vx-align-' + align : '',
     ]"
   >
     <slot />
@@ -13,6 +13,8 @@
 </template>
 
 <style lang="sass">
+@import '../styles/flex'
+
 .vx-container
   display: flex
 
