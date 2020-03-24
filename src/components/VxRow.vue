@@ -1,5 +1,11 @@
 <template>
-  <vx-container row :justify="justify" :align="align">
+  <vx-container
+    row
+    :justify="justify"
+    :align="align"
+    :width="width"
+    :height="height"
+  >
     <slot />
   </vx-container>
 </template>
@@ -13,6 +19,8 @@ export default defineComponent({
   props: {
     justify: String,
     align: String,
+    width: Number,
+    height: Number,
   },
   components: {
     VxContainer,

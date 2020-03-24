@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import vue from 'rollup-plugin-vue';
+import css from 'rollup-plugin-css-only';
 import alias from '@rollup/plugin-alias';
 import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
@@ -31,9 +32,10 @@ const baseConfig = {
           '@': path.resolve(projectRoot, 'src'),
         },
       }),
+      css({ output: 'dist/vuexen.css' }),
     ],
     vue: {
-      css: true,
+      css: false,
       template: {
         isProduction: true,
       },
