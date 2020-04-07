@@ -1,12 +1,13 @@
 {
   "name": "vuexen",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "license": "GPL-3.0",
   "main": "dist/vuexen.ssr.js",
   "browser": "dist/vuexen.esm.js",
   "module": "dist/vuexen.esm.js",
   "unpkg": "dist/vuexen.min.js",
   "types": "types/index.d.ts",
+  "repository": "git@github.com:DraconicDevelopment/vuexen.git",
   "scripts": {
     "serve": "vue-cli-service serve src/serve-dev.ts",
     "build": "cross-env NODE_ENV=production rollup --config rollup.config.js",
@@ -48,6 +49,7 @@
     "@vue/eslint-config-typescript": "^5.0.1",
     "@vue/test-utils": "1.0.0-beta.32",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
     "cross-env": "^7.0.2",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.1.1",

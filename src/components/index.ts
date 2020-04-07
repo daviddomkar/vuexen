@@ -6,3 +6,4 @@ export { default as VxCol } from './VxCol.vue';
 export { default as VxStack } from './VxStack.vue';
 export { default as VxStackItem } from './VxStackItem.vue';
 export { default as VxBlock } from './VxBlock.vue';
+export { default as VxHeading } from './VxHeading.vue';

@@ -1,0 +1,9 @@
+@use 'sass:map'
+
+@import 'mixins'
+@import 'config'
+
+$colors: map.get(map.get(map.get($config, 'themes'), 'default'), 'colors')
+
+@each $name, $hex in $colors
+  @include color($name, $hex)

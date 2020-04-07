@@ -5,6 +5,7 @@
     :col="col"
     :justify="justify"
     :align="align"
+    :color="color"
   >
     <slot />
   </vx-container>
@@ -12,6 +13,8 @@
 
 <style lang="sass">
 @import '../styles/flex'
+@import '../styles/color'
+@import '../styles/elevation'
 
 .vx-root
   width: 100vw
@@ -31,6 +34,7 @@ export default defineComponent({
     col: Boolean,
     justify: String,
     align: String,
+    color: String,
   },
   components: {
     VxContainer,

@@ -1,4 +1,20 @@
-@import 'mixins'
+@mixin justify($pos)
+  .vx-justify-#{$pos}
+    @if $pos == 'start'
+      justify-content: flex-start
+    @else if $pos == 'end'
+      justify-content: flex-end
+    @else 
+      justify-content: #{$pos}
+
+@mixin align($pos)
+  .vx-align-#{$pos}
+    @if $pos == 'start'
+      align-items: flex-start
+    @else if $pos == 'end'
+      align-items: flex-end
+    @else 
+      align-items: #{$pos}
 
 @include justify('start')
 @include justify('end')

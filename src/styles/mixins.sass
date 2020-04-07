@@ -1,17 +1,10 @@
-@mixin justify($pos)
-  .vx-justify-#{$pos}
-    @if $pos == 'start'
-      justify-content: flex-start
-    @else if $pos == 'end'
-      justify-content: flex-end
-    @else 
-      justify-content: #{$pos}
+@mixin color($name, $value)
+  .vx-#{$name}
+    color: $value
 
-@mixin align($pos)
-  .vx-align-#{$pos}
-    @if $pos == 'start'
-      align-items: flex-start
-    @else if $pos == 'end'
-      align-items: flex-end
-    @else 
-      align-items: #{$pos}
+  .vx-bg-#{$name}
+    background-color: $value
+
+@mixin elevation($level, $blur, $x, $y, $color)
+  .vx-elevation-#{$level}
+    box-shadow: $x $y $blur $color

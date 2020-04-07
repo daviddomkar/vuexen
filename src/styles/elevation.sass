@@ -1,0 +1,21 @@
+@use 'sass:map'
+
+@import 'mixins'
+@import 'config'
+
+$elevation: map.get(map.get(map.get($config, 'themes'), 'default'), 'elevation')
+
+$levels: map.get($elevation, 'levels')
+$color: map.get($elevation, 'color')
+
+@for $i from 1 through length($levels) 
+  $level: nth($levels, $i)
+
+  $blur: map.get($level, 'blur')
+  $x: map.get($level, 'x')
+  $y: map.get($level, 'y')
+
+  @include elevation($i, $blur, $x, $y, $color)
+
+
+

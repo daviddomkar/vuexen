@@ -1,4 +1,10 @@
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap');
+
+html {
+  font-family: 'Titillium Web', sans-serif;
+}
+
 body {
   margin: 0;
 }
@@ -6,35 +12,25 @@ body {
 
 <script lang="ts">
 import Vue from 'vue';
-import { VxRoot, VxStack, VxStackItem, VxContainer } from '@/main';
+import { VxRoot, VxContainer, VxHeading } from '@/main';
 
 export default Vue.extend({
   name: 'ServeDev',
   components: {
     VxRoot,
-    VxStack,
-    VxStackItem,
     VxContainer,
+    VxHeading,
   },
 });
 </script>
 
 <template>
-  <div id="app">
-    <vx-root>
-      <vx-stack>
-        <vx-stack-item top="0px" bottom="0px">
-          <vx-container shrink justify="center" align="center">
-            <p>idk</p>
-          </vx-container>
-        </vx-stack-item>
-        <vx-stack-item top="2px">
-          <p>idk</p>
-        </vx-stack-item>
-        <vx-stack-item left="2px">
-          <p>idk</p>
-        </vx-stack-item>
-      </vx-stack>
-    </vx-root>
-  </div>
+  <vx-root id="app" color="background-primary" justify="center" align="center">
+    <vx-container color="background-secondary" width="360px" elevation="1" />
+    <vx-container height="400px" align="center" justify="center" col>
+      <vx-heading level="1">Ahoj</vx-heading>
+      <vx-heading level="1">Ahoj</vx-heading>
+      <vx-heading level="1">Ahoj</vx-heading>
+    </vx-container>
+  </vx-root>
 </template>
