@@ -1,0 +1,59 @@
+$config: (
+  themes: (
+    default: (
+      colors: (
+        primary: #85ed5f,
+        secondary: #ffe248,
+        primary-gradient: linear-gradient(101.27deg, #85ed5f 0%, #ffe248 100%),
+        background-primary: #141b1b,
+        background-secondary: #1a2424,
+        background-gradient:
+          radial-gradient(50% 50% at 50% 50%, #141b1b 0%, #111717 100%),
+        text: #ffffff,
+      ),
+      elevation: (
+        color: rgba(0, 0, 0, 0.25),
+        levels: (
+          (
+            x: 4px,
+            y: 4px,
+            blur: 8px,
+          ),
+          (
+            x: 6px,
+            y: 6px,
+            blur: 12px,
+          ),
+          (
+            x: 8px,
+            y: 8px,
+            blur: 16px,
+          ),
+        ),
+      ),
+      margin: (
+        2px,
+        4px,
+        12px,
+        16px,
+        24px,
+        32px,
+        48px,
+        64px,
+      ),
+      padding: (
+        2px,
+        4px,
+        12px,
+        16px,
+        24px,
+        32px,
+        48px,
+        64px,
+      ),
+      typography: (
+        heading: (),
+      ),
+    ),
+  ),
+);

@@ -5,22 +5,28 @@
     :align="align"
     :width="width"
     :height="height"
+    :color="color"
+    :elevation="elevation"
+    :margin="margin"
+    :padding="padding"
   >
     <slot />
   </vx-container>
 </template>
 
 <script lang="ts">
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+
 import { defineComponent } from '@vue/composition-api';
 
 import VxContainer from './VxContainer.vue';
 
+const { col, row, ...props } = VxContainer.props!;
+
 export default defineComponent({
   props: {
-    justify: String,
-    align: String,
-    width: Number,
-    height: Number,
+    ...props,
   },
   components: {
     VxContainer,

@@ -1,10 +1,12 @@
 <template>
   <vx-container
-    row
+    :tag="tag"
+    :row="row"
+    :col="col"
     :justify="justify"
     :align="align"
-    :width="width"
-    :height="height"
+    :width="col ? size : null"
+    :height="!col ? size : null"
     :color="color"
     :elevation="elevation"
     :margin="margin"
@@ -22,10 +24,11 @@ import { defineComponent } from '@vue/composition-api';
 
 import VxContainer from './VxContainer.vue';
 
-const { col, row, ...props } = VxContainer.props!;
+const { width, height, ...props } = VxContainer.props!;
 
 export default defineComponent({
   props: {
+    size: String,
     ...props,
   },
   components: {

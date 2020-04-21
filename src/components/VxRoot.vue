@@ -6,6 +6,8 @@
     :justify="justify"
     :align="align"
     :color="color"
+    :margin="margin"
+    :padding="padding"
   >
     <slot />
   </vx-container>
@@ -30,14 +32,13 @@ import VxContainer from './VxContainer.vue';
 
 export default defineComponent({
   props: {
-    row: Boolean,
-    col: Boolean,
-    justify: String,
-    align: String,
-    color: String,
+    ...VxContainer.props,
   },
   components: {
     VxContainer,
+  },
+  setup() {
+    console.log(VxContainer.props);
   },
 });
 </script>
