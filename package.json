@@ -1,6 +1,6 @@
 {
   "name": "vuexen",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "license": "GPL-3.0",
   "main": "dist/vuexen.ssr.js",
   "browser": "dist/vuexen.esm.js",
@@ -22,12 +22,12 @@
   },
   "lint-staged": {
     "*.{js,jsx,vue,ts,tsx}": [
-      "vue-cli-service lint",
-      "git add"
+      "vue-cli-service lint"
     ]
   },
   "dependencies": {
     "@vue/composition-api": "^0.5.0",
+    "rollup-plugin-typescript2": "^0.27.0",
     "vue": "^2.6.11"
   },
   "devDependencies": {

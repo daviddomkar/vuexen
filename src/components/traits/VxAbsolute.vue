@@ -1,5 +1,5 @@
 <style lang="sass">
-.vx-stack-item
+.vx-absolute
   position: absolute
 </style>
 
@@ -19,13 +19,13 @@ export default defineComponent({
       const nodes = slots.default();
 
       if (nodes.length > 1) {
-        throw new Error('vx-stack-item can only have one child.');
+        throw new Error('vx-absolute can only have one child.');
       }
 
       const node = nodes[0];
 
       node.data = node.data ?? {};
-      node.data.class = 'vx-stack-item';
+      node.data.class = 'vx-absolute';
       node.data.style = [
         props.zIndex ? { zIndex: props.zIndex } : {},
         props.top ? { top: props.top } : {},

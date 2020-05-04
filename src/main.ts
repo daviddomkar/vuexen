@@ -1,6 +1,9 @@
 import Vue, { PluginFunction } from 'vue';
 
-import * as components from '@/components/index.ts';
+import * as coreComponents from '@/components/core/index.ts';
+import * as layoutComponents from '@/components/layout/index.ts';
+import * as textComponents from '@/components/text/index.ts';
+import * as traitComponents from '@/components/traits/index.ts';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 interface InstallFunction extends PluginFunction<any> {
@@ -12,7 +15,22 @@ const install: InstallFunction = function installVuexen(vue: typeof Vue) {
 
   install.installed = true;
 
-  Object.entries(components).forEach(([componentName, component]) => {
+  Object.entries(coreComponents).forEach(([componentName, component]) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    vue.component(componentName, component as any);
+  });
+
+  Object.entries(layoutComponents).forEach(([componentName, component]) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    vue.component(componentName, component as any);
+  });
+
+  Object.entries(textComponents).forEach(([componentName, component]) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    vue.component(componentName, component as any);
+  });
+
+  Object.entries(traitComponents).forEach(([componentName, component]) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     vue.component(componentName, component as any);
   });
@@ -34,4 +52,7 @@ if (GlobalVue) {
 }
 
 export default plugin;
-export * from '@/components/index.ts';
+export * from '@/components/core/index.ts';
+export * from '@/components/layout/index.ts';
+export * from '@/components/text/index.ts';
+export * from '@/components/traits/index.ts';

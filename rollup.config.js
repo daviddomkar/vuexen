@@ -138,5 +138,4 @@ if (!argv.format || argv.format === 'iife') {
   };
   buildFormats.push(unpkgConfig);
 }
-
 export default buildFormats;

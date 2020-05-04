@@ -1,11 +1,12 @@
 <template>
-  <div
+  <vx-tag
     :tag="tag"
-    class="vx-container"
+    class="vx-flex"
     :class="[
       row ? 'vx-row' : '',
       col ? 'vx-col' : '',
       wrap ? 'vx-wrap' : '',
+      expand ? 'vx-expand' : '',
       justify ? 'vx-justify-' + justify : '',
       align ? 'vx-align-' + align : '',
       color ? 'vx-bg-' + color : '',
@@ -19,13 +20,13 @@
     ]"
   >
     <slot />
-  </div>
+  </vx-tag>
 </template>
 
 <style lang="sass">
-@import '../styles/flex'
+@import '../../styles/flex'
 
-.vx-container
+.vx-flex
   box-sizing: border-box
   display: flex
   width: 100%
@@ -39,12 +40,15 @@
 
 .vx-wrap
   flex-wrap: wrap
+
+.vx-expand
+  flex-grow: 1
 </style>
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api';
 
-import VxTag from './VxTag.vue';
+import VxTag from '../core/VxTag.vue';
 
 export default defineComponent({
   props: {
@@ -55,6 +59,7 @@ export default defineComponent({
     row: Boolean,
     col: Boolean,
     wrap: Boolean,
+    expand: Boolean,
     justify: String,
     align: String,
     width: String,

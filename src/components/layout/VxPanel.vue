@@ -1,16 +1,8 @@
 <template>
   <vx-container
-    :tag="tag"
-    :row="row"
-    :col="col"
-    :justify="justify"
-    :align="align"
     :width="col ? size : null"
     :height="!col ? size : null"
-    :color="color"
-    :elevation="elevation"
-    :margin="margin"
-    :padding="padding"
+    v-bind="$props"
   >
     <slot />
   </vx-container>
@@ -28,7 +20,10 @@ const { width, height, ...props } = VxContainer.props!;
 
 export default defineComponent({
   props: {
-    size: String,
+    size: {
+      type: String,
+      required: true,
+    },
     ...props,
   },
   components: {

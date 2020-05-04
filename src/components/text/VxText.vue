@@ -7,7 +7,7 @@
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api';
 
-import VxTag from './VxTag.vue';
+import VxTag from '../core/VxTag.vue';
 
 export default defineComponent({
   props: {

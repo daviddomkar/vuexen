@@ -1,15 +1,5 @@
 <template>
-  <vx-container
-    row
-    :justify="justify"
-    :align="align"
-    :width="width"
-    :height="height"
-    :color="color"
-    :elevation="elevation"
-    :margin="margin"
-    :padding="padding"
-  >
+  <vx-container justify="center" align="center" v-bind="$props">
     <slot />
   </vx-container>
 </template>
@@ -22,7 +12,7 @@ import { defineComponent } from '@vue/composition-api';
 
 import VxContainer from './VxContainer.vue';
 
-const { col, row, ...props } = VxContainer.props!;
+const { justify, align, ...props } = VxContainer.props!;
 
 export default defineComponent({
   props: {

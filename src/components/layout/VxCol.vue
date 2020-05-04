@@ -1,15 +1,5 @@
 <template>
-  <vx-container
-    col
-    :justify="justify"
-    :align="align"
-    :width="width"
-    :height="height"
-    :color="color"
-    :elevation="elevation"
-    :margin="margin"
-    :padding="padding"
-  >
+  <vx-container col v-bind="$props">
     <slot />
   </vx-container>
 </template>

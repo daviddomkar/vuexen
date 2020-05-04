@@ -3,7 +3,6 @@
 
 html {
   font-family: 'Titillium Web', sans-serif;
-  overflow-y: hidden;
 }
 
 body {
@@ -18,7 +17,18 @@ h1 {
 
 <script lang="ts">
 import { defineComponent, ref } from '@vue/composition-api';
-import { VxRoot, VxContainer, VxCol, VxRow, VxPanel, VxHeading } from '@/main';
+import {
+  VxRoot,
+  VxContainer,
+  VxCol,
+  VxRow,
+  VxPanel,
+  VxHeading,
+  VxFixed,
+  VxMargin,
+  VxPadding,
+  VxRounded,
+} from '@/main';
 
 export default defineComponent({
   name: 'ServeDev',
@@ -29,6 +39,10 @@ export default defineComponent({
     VxPanel,
     VxHeading,
     VxContainer,
+    VxFixed,
+    VxMargin,
+    VxPadding,
+    VxRounded,
   },
   setup() {
     const cardCount = ref(8);
@@ -44,35 +58,46 @@ export default defineComponent({
 
 <template>
   <vx-root id="app" color="background-gradient">
-    <vx-panel col color="background-secondary" size="360px" elevation="1" />
-    <vx-col padding="48px,48px,0,48px">
-      <vx-panel margin="0,0,48px,0" row size="72px" />
-      <vx-row>
+    <vx-fixed>
+      <vx-panel col color="background-secondary" size="360px" elevation="1" />
+    </vx-fixed>
+    <vx-margin left="360px">
+      <vx-padding horizontal="48px" top="48px">
         <vx-col>
-          <vx-heading color="text" level="1">TEST</vx-heading>
-          <vx-container margin="48px,0,0,0" justify="space-between" wrap>
-            <vx-container
-              v-for="i in cardCount"
-              :key="i"
-              margin="0,0,16px,0"
-              width="264px"
-              height="460px"
-              color="background-secondary"
-              elevation="1"
-            />
-          </vx-container>
+          <vx-panel margin="0,0,48px,0" row size="72px" />
+          <vx-row>
+            <vx-col>
+              <vx-heading color="text" level="1">TEST</vx-heading>
+              <vx-margin top="48px">
+                <vx-container wrap>
+                  <vx-margin v-for="i in cardCount" :key="i" bottom="16px">
+                    <vx-container
+                      width="264px"
+                      height="460px"
+                      color="background-secondary"
+                      elevation="1"
+                    />
+                  </vx-margin>
+                </vx-container>
+              </vx-margin>
+            </vx-col>
+            <vx-margin left="48px">
+              <vx-panel col size="320px">
+                <vx-margin v-for="i in widgetCount" :key="i" bottom="16px">
+                  <vx-rounded all="20px">
+                    <vx-container
+                      margin="0,0,16px,0"
+                      height="200px"
+                      color="background-secondary"
+                      elevation="1"
+                    />
+                  </vx-rounded>
+                </vx-margin>
+              </vx-panel>
+            </vx-margin>
+          </vx-row>
         </vx-col>
-        <vx-panel margin="0,0,0,48px" col size="320px">
-          <vx-container
-            v-for="i in widgetCount"
-            :key="i"
-            margin="0,0,16px,0"
-            height="200px"
-            color="background-secondary"
-            elevation="1"
-          />
-        </vx-panel>
-      </vx-row>
-    </vx-col>
+      </vx-padding>
+    </vx-margin>
   </vx-root>
 </template>

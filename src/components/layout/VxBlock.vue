@@ -13,8 +13,6 @@
 </template>
 
 <style lang="sass">
-@import '../styles/flex'
-
 .vx-block
   box-sizing: border-box
   display: block

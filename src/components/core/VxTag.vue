@@ -10,7 +10,11 @@ export default defineComponent({
   },
   setup: (props, { slots }) => {
     return () => {
-      return createElement(props.tag, slots.default());
+      if (slots.default) {
+        return createElement(props.tag, slots.default());
+      } else {
+        return createElement(props.tag);
+      }
     };
   },
 });
